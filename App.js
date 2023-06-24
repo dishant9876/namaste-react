@@ -1,41 +1,1666 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-{
-  /* <div class="parent">
-      <div class="child">
-          <h1>I'm an H1 tag</h1>
-          <h2>I'm an H2 tag</h2>
+
+// Main body - App
+// Navbar
+// Body
+// - Search
+// - CardList
+// - Card
+// Footer
+
+const Navbar = () => {
+  return (
+    <div className="header">
+      <div className="headerContent">
+        <div className="headerLogo">
+          <img
+            className="logo"
+            src="https://franchisediscovery.in/brand_images/730711988606edecfd1b7e.png"
+          />
+        </div>
+        <div className="menuList">
+          <ul className="menuItems">
+            <li className="menuItem">Home</li>
+            <li className="menuItem">About Us</li>
+            <li className="menuItem">Contact</li>
+          </ul>
+        </div>
+        <div className="otherMenuList">
+          <ul className="otherMenuItems">
+            <li className="otherMenuItem">
+              <img
+                className="cartLogo"
+                src="https://cdn-icons-png.flaticon.com/512/1656/1656507.png"
+              />
+            </li>
+          </ul>
+        </div>
       </div>
-  </div> */
-}
-const Parent = () => (
-  <div className="parent">
-    <div className="child">
-      <h1>I'm an H1 tag</h1>
-      <h2>I'm an H2 tag</h2>
     </div>
-    <div className="child2">
-      <h1>I'm an H1 tag</h1>
-      <h2>I'm an H2 tag</h2>
+  );
+};
+
+const Search = () => {
+  return (
+    <div className="search">
+      <input type="text" placeholder="Search for restaurants and foods" />
+      <button>Search</button>
     </div>
-  </div>
-);
-const ParentComponent = () => (
-  <React.Fragment>
-    <Parent />
-    <div className="parent-component">
-      <div className="child-component">
-        <h1>I'm an H1 tag using component</h1>
-        <h2>I'm an H2 tag using component</h2>
+  );
+};
+
+const resObj = [
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "464509",
+      name: "Leon's - Burgers & Wings (Leon Grill)",
+      uuid: "ad3d5699-2dab-4a1f-ba45-391ddd892b77",
+      city: "1",
+      area: "Frazer Town",
+      totalRatingsString: "5000+ ratings",
+      cloudinaryImageId: "qol6dzbjxyse0tylbznu",
+      cuisines: ["American", "Snacks", "Turkish", "Portuguese", "Continental"],
+      tags: [],
+      costForTwo: 30000,
+      costForTwoString: "₹300 FOR TWO",
+      deliveryTime: 23,
+      minDeliveryTime: 23,
+      maxDeliveryTime: 23,
+      slaString: "23 MINS",
+      lastMileTravel: 4.5,
+      slugs: {
+        restaurant: "leon-grill-frazer-town-frazer-town-2",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Smart Avenue, G-01, No. 90, Coles Road, Bangalore, BBMP East, Karnataka 560005",
+      locality: "Pulkeshi Nagar",
+      parentId: 371281,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "distance",
+            fee: 4900,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 4900,
+        message: "",
+        title: "Delivery Charge",
+        amount: "4900",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID:
+        "cid=7179745~p=22~eid=00000188-eeba-bbbd-0ab7-0804003e1626~srvts=1687632395197",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "4.5 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "50% OFF",
+        subHeader: "UPTO ₹100",
+        discountTag: "",
+        headerTypeV2: 0,
+      },
+      sla: {
+        restaurantId: "464509",
+        deliveryTime: 23,
+        minDeliveryTime: 23,
+        maxDeliveryTime: 23,
+        lastMileTravel: 4.5,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.3",
+      totalRatings: 5000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "428",
+      name: "Biryani Pot",
+      uuid: "6db20a8b-dd85-4148-b750-107169f7f826",
+      city: "1",
+      area: "Btm Layout",
+      totalRatingsString: "10000+ ratings",
+      cloudinaryImageId: "mdipoyzfzsa7n7igskht",
+      cuisines: ["North Indian", "Biryani"],
+      tags: [],
+      costForTwo: 50000,
+      costForTwoString: "₹500 FOR TWO",
+      deliveryTime: 28,
+      minDeliveryTime: 28,
+      maxDeliveryTime: 28,
+      slaString: "28 MINS",
+      lastMileTravel: 7.5,
+      slugs: {
+        restaurant: "biryani-pot-madiwala-junction-btm",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address: "14th  Cross, 4th link Road Maruthi Nagar Madiwala Bangalore 68",
+      locality: "Maruti Nagar",
+      parentId: 21798,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "distance",
+            fee: 8600,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 8600,
+        message: "",
+        title: "Delivery Charge",
+        amount: "8600",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 1,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "7.5 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "20% OFF",
+        subHeader: "UPTO ₹50",
+        discountTag: "",
+        headerTypeV2: 0,
+      },
+      sla: {
+        restaurantId: "428",
+        deliveryTime: 28,
+        minDeliveryTime: 28,
+        maxDeliveryTime: 28,
+        lastMileTravel: 7.5,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "IT_IS_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "3.9",
+      totalRatings: 10000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "337335",
+      name: "Kannur food kitchen",
+      uuid: "c70b61bc-0f68-4e24-996b-749fbf295c35",
+      city: "1",
+      area: "BTM Layout",
+      totalRatingsString: "10000+ ratings",
+      cloudinaryImageId: "a27weqanhnszqiuzsoik",
+      cuisines: ["Kerala", "Biryani", "Beverages"],
+      tags: [],
+      costForTwo: 20000,
+      costForTwoString: "₹200 FOR TWO",
+      deliveryTime: 30,
+      minDeliveryTime: 30,
+      maxDeliveryTime: 30,
+      slaString: "30 MINS",
+      lastMileTravel: 7.599999904632568,
+      slugs: {
+        restaurant: "kannur-food-kitchen-btm-btm",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "kannur food point, Chocolate Factory Road, Tavarekere, Cashier Layout, 1st Stage, BTM Layout, thavrakharea, Karnataka, India",
+      locality: "1st  Stage",
+      parentId: 114756,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "distance",
+            fee: 8600,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 8600,
+        message: "",
+        title: "Delivery Charge",
+        amount: "8600",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 1,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "7.5 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "50% OFF",
+        subHeader: "",
+        discountTag: "FLAT DEAL",
+        headerTypeV2: 0,
+      },
+      sla: {
+        restaurantId: "337335",
+        deliveryTime: 30,
+        minDeliveryTime: 30,
+        maxDeliveryTime: 30,
+        lastMileTravel: 7.599999904632568,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "IT_IS_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "3.7",
+      totalRatings: 10000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "280474",
+      name: "Empire Juices and Desserts",
+      uuid: "8f19ebba-e13a-4e8c-b083-d66af59f0563",
+      city: "1",
+      area: "Majestic",
+      totalRatingsString: "50+ ratings",
+      cloudinaryImageId: "xghmpbetflqzmgn4dauv",
+      cuisines: ["Ice Cream", "Juices"],
+      tags: [],
+      costForTwo: 20000,
+      costForTwoString: "₹200 FOR TWO",
+      deliveryTime: 30,
+      minDeliveryTime: 30,
+      maxDeliveryTime: 30,
+      slaString: "30 MINS",
+      lastMileTravel: 3.799999952316284,
+      slugs: {
+        restaurant: "the-empire-juice-shop-majestic-majestic",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "NO.232, 6TH CROSS, S C ROAD, NEAR ANAND RAO CIRCLE, GANDHINAGAR, BANGALORE-560009",
+      locality: "Gandhi Nagar",
+      parentId: 387289,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "distance",
+            fee: 4100,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 4100,
+        message: "",
+        title: "Delivery Charge",
+        amount: "4100",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID:
+        "cid=7137921~p=4~eid=00000188-eeba-bbbd-0ab7-07fe003e044b~srvts=1687632395197",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "3.7 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "20% OFF",
+        subHeader: "UPTO ₹50",
+        discountTag: "",
+        headerTypeV2: 0,
+      },
+      sla: {
+        restaurantId: "280474",
+        deliveryTime: 30,
+        minDeliveryTime: 30,
+        maxDeliveryTime: 30,
+        lastMileTravel: 3.799999952316284,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.0",
+      totalRatings: 50,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "5938",
+      name: "Burger King",
+      uuid: "15bfac38-f648-4d1f-8a91-7bbd6f9a4c1e",
+      city: "1",
+      area: "Shivaji Nagar",
+      totalRatingsString: "10000+ ratings",
+      cloudinaryImageId: "e33e1d3ba7d6b2bb0d45e1001b731fcf",
+      cuisines: ["Burgers", "American"],
+      tags: [],
+      costForTwo: 35000,
+      costForTwoString: "₹350 FOR TWO",
+      deliveryTime: 23,
+      minDeliveryTime: 23,
+      maxDeliveryTime: 23,
+      slaString: "23 MINS",
+      lastMileTravel: 2.700000047683716,
+      slugs: {
+        restaurant: "burger-king-central-bangalore",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Unit no 111/4, and 8/2, Asha Gallary, Opposite to west side , Commercial Street, Bangalore-  5600001",
+      locality: "Tasker Town",
+      parentId: 166,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 3300,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 3300,
+        message: "",
+        title: "Delivery Charge",
+        amount: "3300",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "2.7 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "60% OFF",
+        subHeader: "UPTO ₹120",
+        discountTag: "",
+        headerTypeV2: 0,
+      },
+      sla: {
+        restaurantId: "5938",
+        deliveryTime: 23,
+        minDeliveryTime: 23,
+        maxDeliveryTime: 23,
+        lastMileTravel: 2.700000047683716,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.1",
+      totalRatings: 10000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "210945",
+      name: "Royal Restaurant",
+      uuid: "9b33bca4-65e6-4a26-af3e-f47c4476ed4d",
+      city: "1",
+      area: "Shivajinagar",
+      totalRatingsString: "5000+ ratings",
+      cloudinaryImageId: "yicweopn4lzcjlqy4jvq",
+      cuisines: ["Chinese", "North Indian", "Tandoor"],
+      tags: [],
+      costForTwo: 30000,
+      costForTwoString: "₹300 FOR TWO",
+      deliveryTime: 24,
+      minDeliveryTime: 24,
+      maxDeliveryTime: 24,
+      slaString: "24 MINS",
+      lastMileTravel: 2.5999999046325684,
+      slugs: {
+        restaurant: "royal-restaurant-central-bangalore-central-bangalore",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Broadway Road Police Station, HKP Road, Sulthangunta, Shivajinagar, Bengaluru, Bangalore Urban, Karnataka, India",
+      locality: "Sulthangunta",
+      parentId: 2896,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "distance",
+            fee: 3300,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 3300,
+        message: "",
+        title: "Delivery Charge",
+        amount: "3300",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "2.5 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "35% OFF",
+        subHeader: "",
+        discountTag: "FLAT DEAL",
+        headerTypeV2: 0,
+      },
+      sla: {
+        restaurantId: "210945",
+        deliveryTime: 24,
+        minDeliveryTime: 24,
+        maxDeliveryTime: 24,
+        lastMileTravel: 2.5999999046325684,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "3.9",
+      totalRatings: 5000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "30531",
+      name: "Hotel Empire",
+      uuid: "fdf6686f-6f39-4a90-8eb0-6dc7abf82643",
+      city: "1",
+      area: "Brigade Road",
+      totalRatingsString: "10000+ ratings",
+      cloudinaryImageId: "qltgnkyywuo5gmnpqzbm",
+      cuisines: ["North Indian", "Kebabs", "Biryani"],
+      tags: [],
+      costForTwo: 45000,
+      costForTwoString: "₹450 FOR TWO",
+      deliveryTime: 20,
+      minDeliveryTime: 20,
+      maxDeliveryTime: 20,
+      slaString: "20 MINS",
+      lastMileTravel: 2.0999999046325684,
+      slugs: {
+        restaurant: "empire-restaurant-central-bangalore-central-bangalore",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Empire SuitesNo.35, Castle Street, Off Brigade Road,Bengaluru, Karnataka 560025",
+      locality: "Brigade Road",
+      parentId: 475,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "distance",
+            fee: 3300,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 3300,
+        message: "",
+        title: "Delivery Charge",
+        amount: "3300",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "2 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "10% OFF",
+        subHeader: "UPTO ₹40",
+        discountTag: "",
+        headerTypeV2: 0,
+      },
+      sla: {
+        restaurantId: "30531",
+        deliveryTime: 20,
+        minDeliveryTime: 20,
+        maxDeliveryTime: 20,
+        lastMileTravel: 2.0999999046325684,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.3",
+      totalRatings: 10000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "482672",
+      name: "La Pino'z Pizza",
+      uuid: "d1911a4e-4b55-484e-9f95-1f5985d04d98",
+      city: "1",
+      area: "Indiranagar",
+      totalRatingsString: "1000+ ratings",
+      cloudinaryImageId: "glzhq7cgpn4p6ck4t2qs",
+      cuisines: ["Pizzas", "Pastas", "Italian", "Desserts", "Beverages"],
+      tags: [],
+      costForTwo: 50000,
+      costForTwoString: "₹500 FOR TWO",
+      deliveryTime: 26,
+      minDeliveryTime: 26,
+      maxDeliveryTime: 26,
+      slaString: "26 MINS",
+      lastMileTravel: 6.800000190734863,
+      slugs: {
+        restaurant: "la-pino'z-pizza-indiranagar-indiranagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Shop No. 2, Building No. 3047, Opp.Kailash Parbat Rastaurant, 80 Feet Road, Hal2Nd Stage, Indira Nagar, Bengaluru ,Karnataka, 560038",
+      locality: "HAL 2nd Stage",
+      parentId: 4961,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 7600,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 7600,
+        message: "",
+        title: "Delivery Charge",
+        amount: "7600",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "6.8 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "50% OFF",
+        subHeader: "UPTO ₹100",
+        discountTag: "",
+        headerTypeV2: 0,
+      },
+      sla: {
+        restaurantId: "482672",
+        deliveryTime: 26,
+        minDeliveryTime: 26,
+        maxDeliveryTime: 26,
+        lastMileTravel: 6.800000190734863,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "3.8",
+      totalRatings: 1000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "196047",
+      name: "New Taj Darbar",
+      uuid: "94a6fc19-e819-4450-b52f-a96c5a32d565",
+      city: "1",
+      area: "Shivajinagar",
+      totalRatingsString: "10000+ ratings",
+      cloudinaryImageId: "nfieyqgxk1omknxfbluj",
+      cuisines: ["Biryani", "Indian", "Chinese", "Tandoor", "Seafood"],
+      tags: [],
+      costForTwo: 30000,
+      costForTwoString: "₹300 FOR TWO",
+      deliveryTime: 33,
+      minDeliveryTime: 33,
+      maxDeliveryTime: 33,
+      slaString: "33 MINS",
+      lastMileTravel: 2.5999999046325684,
+      slugs: {
+        restaurant: "new-taj-darbar-central-bangalore-central-bangalore",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address: "New Taj Darbar, Shivaji Nagar, Bengaluru, Karnataka, India",
+      locality: "Saint Mary's Church Road",
+      parentId: 148190,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "distance",
+            fee: 3300,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 3300,
+        message: "",
+        title: "Delivery Charge",
+        amount: "3300",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "2.5 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "30% OFF",
+        subHeader: "UPTO ₹75",
+        discountTag: "",
+        headerTypeV2: 0,
+      },
+      sla: {
+        restaurantId: "196047",
+        deliveryTime: 33,
+        minDeliveryTime: 33,
+        maxDeliveryTime: 33,
+        lastMileTravel: 2.5999999046325684,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "3.4",
+      totalRatings: 10000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "485771",
+      name: "Sree Banashankari Donne Biryani",
+      uuid: "6c73e264-801e-4a0b-928b-8f91ea32cacb",
+      city: "1",
+      area: "Basaveshwara Nagar",
+      totalRatingsString: "500+ ratings",
+      cloudinaryImageId: "hrn5r5ghcl7m3piog5iy",
+      cuisines: [
+        "Biryani",
+        "South Indian",
+        "Indian",
+        "Chinese",
+        "Grill",
+        "Kebabs",
+        "Beverages",
+      ],
+      tags: [],
+      costForTwo: 25000,
+      costForTwoString: "₹250 FOR TWO",
+      deliveryTime: 26,
+      minDeliveryTime: 26,
+      maxDeliveryTime: 26,
+      slaString: "26 MINS",
+      lastMileTravel: 7.199999809265137,
+      slugs: {
+        restaurant: "sree-banashankari-donne-biryani-rajajinagar-rajajinagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "#343/344 ground floor 5th main 3rd stage 2nd block basaveshwar Nagar Bengaluru 560079",
+      locality: "2nd block",
+      parentId: 291485,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "distance",
+            fee: 8600,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 8600,
+        message: "",
+        title: "Delivery Charge",
+        amount: "8600",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "7.1 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "10% OFF",
+        subHeader: "ABOVE ₹600",
+        discountTag: "FLAT DEAL",
+        headerTypeV2: 0,
+      },
+      sla: {
+        restaurantId: "485771",
+        deliveryTime: 26,
+        minDeliveryTime: 26,
+        maxDeliveryTime: 26,
+        lastMileTravel: 7.199999809265137,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "3.7",
+      totalRatings: 500,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "603204",
+      name: "Dairy Day Ice Creams",
+      uuid: "bb6f30f4-ff7b-4208-aafd-ecb28e42acf9",
+      city: "1",
+      area: "Indiranagar",
+      totalRatingsString: "Too Few Ratings",
+      cloudinaryImageId: "ic5zxmz3ohedkhuq3gql",
+      cuisines: ["Ice Cream", "Desserts"],
+      tags: [],
+      costForTwo: 20000,
+      costForTwoString: "₹200 FOR TWO",
+      deliveryTime: 27,
+      minDeliveryTime: 27,
+      maxDeliveryTime: 27,
+      slaString: "27 MINS",
+      lastMileTravel: 6.199999809265137,
+      slugs: {
+        restaurant: "dairy-day-ice-creams-indira-nagar-indiranagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Shop 6, First Floor, Binnamangala, Stage 1, Indiranagar, Bengaluru, Karnataka 560038",
+      locality: "1st Stage",
+      parentId: 68031,
+      unserviceable: false,
+      veg: true,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 7600,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 7600,
+        message: "",
+        title: "Delivery Charge",
+        amount: "7600",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID:
+        "cid=7194257~p=19~eid=00000188-eeba-bbbd-0ab7-0803003e1348~srvts=1687632395197",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "6.1 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "603204",
+        deliveryTime: 27,
+        minDeliveryTime: 27,
+        maxDeliveryTime: 27,
+        lastMileTravel: 6.199999809265137,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "--",
+      totalRatings: 0,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "546402",
+      name: "Biriyani @99",
+      uuid: "b5ee1816-7318-4bba-b443-03605477a7df",
+      city: "1",
+      area: "Kalyan Nagar",
+      totalRatingsString: "100+ ratings",
+      cloudinaryImageId: "bojnozepo1gxvohjttwj",
+      cuisines: ["Indian", "Biryani"],
+      tags: [],
+      costForTwo: 20000,
+      costForTwoString: "₹200 FOR TWO",
+      deliveryTime: 34,
+      minDeliveryTime: 34,
+      maxDeliveryTime: 34,
+      slaString: "34 MINS",
+      lastMileTravel: 10.300000190734863,
+      slugs: {
+        restaurant:
+          "biriyani-@99-kammanahalli/kalyan-nagar-kammanahalli/kalyan-nagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "2JHV+389, Krishnananda Rd, Chellikere, Babusabpalya, Kalyan Nagar, Bengaluru, Karnataka 560043, India",
+      locality: "Babusabpalya",
+      parentId: 328256,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "distance",
+            fee: 12600,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 12600,
+        message: "",
+        title: "Delivery Charge",
+        amount: "12600",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "10.3 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "15% OFF",
+        subHeader: "ABOVE ₹700",
+        discountTag: "FLAT DEAL",
+        headerTypeV2: 0,
+      },
+      sla: {
+        restaurantId: "546402",
+        deliveryTime: 34,
+        minDeliveryTime: 34,
+        maxDeliveryTime: 34,
+        lastMileTravel: 10.300000190734863,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "2.9",
+      totalRatings: 100,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "94703",
+      name: "Sri Punjabi Dhaba",
+      uuid: "244943ac-cb6b-439f-9a09-687af66615b1",
+      city: "1",
+      area: "BTM Layout",
+      totalRatingsString: "10000+ ratings",
+      cloudinaryImageId: "i53hrycmcn2oehrojag0",
+      cuisines: ["North Indian", "Biryani", "Chinese", "Kebabs"],
+      tags: [],
+      costForTwo: 30000,
+      costForTwoString: "₹300 FOR TWO",
+      deliveryTime: 31,
+      minDeliveryTime: 31,
+      maxDeliveryTime: 31,
+      slaString: "31 MINS",
+      lastMileTravel: 7.5,
+      slugs: {
+        restaurant: "sri-punjabi-dhaba-bangalore-btm",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Opposite 11th Cross 20th Main Rd,beside sri balaji wood Old Madiwala, Cashier Layout,  1st Stage, BTM 1st Stage, Bengaluru, Karnataka 560029",
+      locality: "Cashier Layout",
+      parentId: 21426,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "distance",
+            fee: 8600,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 8600,
+        message: "",
+        title: "Delivery Charge",
+        amount: "8600",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 1,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "7.5 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "60% OFF",
+        subHeader: "",
+        discountTag: "FLAT DEAL",
+        headerTypeV2: 0,
+      },
+      sla: {
+        restaurantId: "94703",
+        deliveryTime: 31,
+        minDeliveryTime: 31,
+        maxDeliveryTime: 31,
+        lastMileTravel: 7.5,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "IT_IS_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "3.0",
+      totalRatings: 10000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "245536",
+      name: "Brik Oven",
+      uuid: "c741d511-f4db-4474-a763-b63442f0d579",
+      city: "1",
+      area: "Race Course Road",
+      totalRatingsString: "1000+ ratings",
+      cloudinaryImageId: "49352a71022a5b08a8361306ba253892",
+      cuisines: ["Italian", "Pizzas", "Desserts", "Beverages"],
+      tags: [],
+      costForTwo: 70000,
+      costForTwoString: "₹700 FOR TWO",
+      deliveryTime: 26,
+      minDeliveryTime: 26,
+      maxDeliveryTime: 26,
+      slaString: "26 MINS",
+      lastMileTravel: 3,
+      slugs: {
+        restaurant: "brik-oven-rajajinagar-rajajinagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "The Courtyard, Prestiage Trade Towers,Unitle-6 ,No.45/1, palace Road,High Grounds,Sampangi Ramanagar,Bengaluru",
+      locality: "Race Course Road",
+      parentId: 7389,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "distance",
+            fee: 4100,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 4100,
+        message: "",
+        title: "Delivery Charge",
+        amount: "4100",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "Closes soon",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID:
+        "cid=6918781~p=28~eid=00000188-eeba-bbbd-0ab7-0806003e1c1c~srvts=1687632395197",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "3 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "50% OFF",
+        subHeader: "UPTO ₹100",
+        discountTag: "",
+        headerTypeV2: 0,
+      },
+      sla: {
+        restaurantId: "245536",
+        deliveryTime: 26,
+        minDeliveryTime: 26,
+        maxDeliveryTime: 26,
+        lastMileTravel: 3,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.1",
+      totalRatings: 1000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "48581",
+      name: "Rotti Walla",
+      uuid: "5c2bbf06-7cc1-4f6b-9344-423d7130162e",
+      city: "1",
+      area: "Indiranagar",
+      totalRatingsString: "10000+ ratings",
+      cloudinaryImageId: "kvlaq1ugkoozqr741zrv",
+      cuisines: ["North Indian", "Chinese", "Snacks", "Beverages", "Tandoor"],
+      tags: [],
+      costForTwo: 20000,
+      costForTwoString: "₹200 FOR TWO",
+      deliveryTime: 29,
+      minDeliveryTime: 29,
+      maxDeliveryTime: 29,
+      slaString: "29 MINS",
+      lastMileTravel: 6.5,
+      slugs: {
+        restaurant: "tea-stories-indiranagar-indiranagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "1st floor, N 60 GNR Enclave appareddy playa, Indiranagar Double Rd, Bengaluru, 560038",
+      locality: "Appareddy Palya",
+      parentId: 9541,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 7600,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 7600,
+        message: "",
+        title: "Delivery Charge",
+        amount: "7600",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "6.5 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "40% OFF",
+        subHeader: "UPTO ₹80",
+        discountTag: "",
+        headerTypeV2: 0,
+      },
+      sla: {
+        restaurantId: "48581",
+        deliveryTime: 29,
+        minDeliveryTime: 29,
+        maxDeliveryTime: 29,
+        lastMileTravel: 6.5,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.0",
+      totalRatings: 10000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+];
+const CardList = (props) => {
+  const {
+    cloudinaryImageId,
+    name,
+    cuisines,
+    avgRating,
+    deliveryTime,
+    costForTwo,
+  } = props?.resData?.data;
+  return (
+    <div className="cardList">
+      <img
+        className="res-image"
+        src={
+          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
+          cloudinaryImageId
+        }
+      />
+      <div className="res-details">
+        <h3 className="res-name">{name}</h3>
+        <p className="res-cuisine">{cuisines.join(", ")}</p>
+        <div className="res-addtion-details">
+          <div className="res-ratings">{avgRating} stars</div>
+          <div className="dot">•</div>
+          <div className="res-delivery-time">{deliveryTime} mins</div>
+          <div className="dot">•</div>
+          <div className="res-for-two">₹{costForTwo / 100} FOR TWO</div>
+        </div>
       </div>
-      <div className="child2-component">
-        <h1>I'm an H1 tag using component</h1>
-        <h2>I'm an H2 tag using component</h2>
-      </div>
     </div>
-  </React.Fragment>
-);
-console.log(parent);
+  );
+};
+
+const CardComponent = () => {
+  return (
+    <div className="cardComponent">
+      {resObj.map((restaurant) => (
+        <CardList key={restaurant.data.id} resData={restaurant} />
+      ))}
+    </div>
+  );
+};
+
+const FoodApp = () => {
+  return (
+    <>
+      <Navbar />
+      <Search />
+      <div className="mainContent">
+        <CardComponent />
+      </div>
+    </>
+  );
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-console.log(root);
-root.render(<ParentComponent />);
+root.render(<FoodApp />);
