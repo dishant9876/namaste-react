@@ -128,6 +128,17 @@ ul li {
 .search input:target {
   border: solid 2px #fc8019;
 }
+.filterBtn {
+  padding: 10px;
+  display: flex;
+  float: right;
+  font-size: 18px;
+  background: #fc8019;
+  color: #fff !important;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 .cardComponent {
   display: flex;
   flex-wrap: wrap;
