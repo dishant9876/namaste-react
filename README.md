@@ -22,23 +22,13 @@
 
 # Namaste Food
 
-/\*\*
-
-- Header
-- - Logo
-- - Nav Items
+- Main body - App
+- Navbar
 - Body
-- - Search
-- - RestaurantContainer
-- - RestaurantCard
--      - Img
--      - Name of Res, Star Rating, cuisine, delery tie
+  - Search
+  - CardList
+    - Card
 - Footer
-- - Copyright
-- - Links
-- - Address
-- - Contact
-    \*/
 
 Two types of Export/Import
 

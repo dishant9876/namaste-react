@@ -4,14 +4,6 @@ import Navbar from "./components/Navbar";
 import Search from "./components/Search";
 import CardComponent from "./components/CardComponent";
 
-// Main body - App
-// Navbar
-// Body
-// - Search
-// - CardList
-// - Card
-// Footer
-
 const FoodApp = () => {
   return (
     <>

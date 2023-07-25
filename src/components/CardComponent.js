@@ -1,9 +1,27 @@
 import CardList from "./CardList";
 import resObj from "../utils/restaurantData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 const CardComponent = () => {
-  const [restaurant, filterRestaurant] = useState(resObj);
+  const [restaurant, filterRestaurant] = useState([]);
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&page_type=DESKTOP_WEB_LISTING"
+    );
+    const jsonData = await data.json();
+    console.log(jsonData);
+    filterRestaurant(jsonData?.data?.cards[2]?.data?.data?.cards);
+  };
+
+  if (restaurant.length === 0) {
+    return <Shimmer />;
+  }
+
   return (
     <>
       <button
